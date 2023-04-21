@@ -1,0 +1,18 @@
+<div class="card-container">
+    <img src="{{articulo.imagen.archivoUrl}}" class="img-fluid img-thumbnail img">
+    <div class="info-container">
+
+        <p><span>Nombre:</span>  {{articulo.nombre}}</p>
+        <p><span>Descripción:</span>  {{articulo.descripcion}}</p>
+        <p><span>Precio:</span>  {{articulo.precio}}</p>
+        <p><span>Categoria:</span>  {{articulo.categoria}}</p>
+
+        <button (click)="enviarAEdicion()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Editar articulo
+          </button>
+    </div>
+</div>
+

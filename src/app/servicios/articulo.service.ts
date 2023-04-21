@@ -25,7 +25,35 @@ export class ArticuloService {
     return this.http.post<any>(this.url + '/crear-articulo', form);
   }
 
+  public editarImagenDeArticulo(id: string, imagen: File): Observable<any> {
+    const form = new FormData(); //creamos el form
+    form.append('id', id);
+    form.append('file', imagen, 'form-data'); //adjuntar la imagen
+    return this.http.post<any>(this.url + '/editarImg', form);
+  }
+
+  public editarInformacionDeArticulo(id: string, articulo: any): Observable<any> {
+    const form = new FormData(); //creamos el form
+    form.append('id', id);
+    form.append('nombre', articulo.nombre);
+    form.append('descripcion', articulo.descripcion);
+    form.append('precio', articulo.precio);
+    form.append('categoria', articulo.categoria);
+
+    console.log(form);
+    return this.http.post<any>(this.url + '/editarInfo', form);
+  }
+
   public mostrarArticulos() {
     return this.http.get(this.url + '/mostrar-articulos');
+  }
+
+
+  public mostrarArticulosDeUsuario(usuario: String) : Observable<any>{
+    return this.http.get<Observable<any>>(this.url + `/mostrar-articulos-de-usuario?usuario=${usuario}`);
+  }
+
+  public buscarArticuloPorId(id: String): Observable<any>{
+    return this.http.get<Observable<any>>(this.url + `/bucarArticuloPorId?id=${id}`);
   }
 }
