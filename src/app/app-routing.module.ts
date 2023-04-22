@@ -9,6 +9,7 @@ import { TusArticulosComponent } from './tus-articulos/tus-articulos.component';
 import { EditarArticuloComponent } from './editar-articulo/editar-articulo.component';
 import { MuroComponent } from './muro/muro.component';
 import { TuCarritoComponent } from './tu-carrito/tu-carrito.component';
+import { PagarCarritoComponent } from './pagar-carrito/pagar-carrito.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path: 'carrito',
         component: TuCarritoComponent,
+      },
+      {
+        path: 'pagar-carrito',
+        component: PagarCarritoComponent,
       },
     ],
   },

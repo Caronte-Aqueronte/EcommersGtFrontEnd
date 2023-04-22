@@ -1,0 +1,86 @@
+<div class="container">
+    <!--Contenedor del detalle del pedido-->
+    <div class="productos">
+        <h2>Detalle</h2>
+        <div class="card-container" *ngFor="let articulo of articulos">
+            <img src="{{articulo.articulo[0].imagen.archivoUrl}}" class="img-fluid img-thumbnail img">
+            <div class="info-container">
+                <p><span>Nombre:</span> {{articulo.articulo[0].nombre}}</p>
+                <p><span>Precio:</span> {{articulo.articulo[0].precio}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Contenedor para el pago-->
+    <div class="pay-container">
+        <h2>Pagar productos</h2>
+        <p class="pay-p"><span>Total: </span>Q{{total}}</p>
+        <p class="pay-p"><span>Items: </span>{{items}}</p>
+        <div class="menu-metodo-pago">
+            <!--SELECT-->
+            <div>
+                <label for="metodoPago" style="margin-bottom: 10px;">Escoge un metodo de pago</label>
+                <form [formGroup]="formPagar" (submit)="pagarCarrito()">
+                    <select formControlName="metodoPago" class="form-select" aria-label="Metodo de pago"
+                        id="metodoPago">
+                        <option *ngFor="let tarjeta of tarjetas">Tarjeta no.{{tarjeta.numero}}</option>
+                    </select>
+                    <br>
+                    <button type="button" class="btn btn-success" [disabled]="formPagar.invalid">
+                        <img src="../../assets/credit-card.png" alt="" width="30px">
+                        Pagar el carrito
+                    </button>
+                </form>
+            </div>
+            <p>O</p>
+            <!--CHECK BOX-->
+            <div>
+                <label for="cbx-12" style="margin-bottom: 10px;">Ingresa nuevo metodo de pago</label>
+                <div class="checkbox-wrapper-12">
+                    <div class="cbx">
+                        <input id="cbx-12" type="checkbox" (click)="mostrarOcultarMenuTarjeta()">
+                        <label for="cbx-12"></label>
+                        <svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+                            <path d="M2 8.36364L6.23077 12L13 2"></path>
+                        </svg>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <defs>
+                            <filter id="goo-12">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"></feGaussianBlur>
+                                <feColorMatrix in="blur" mode="matrix"
+                                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7" result="goo-12">
+                                </feColorMatrix>
+                                <feBlend in="SourceGraphic" in2="goo-12"></feBlend>
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="metodo-pago-container" [hidden]="!banderaMostrarMenuTarjeta">
+            <form [formGroup]="formTarjeta" (submit)="guardarTarjeta()">
+                <div class="input-group">
+                    <span class="input-group-text">Tarjeta de credito</span>
+                    <input type="number" class="form-control" placeholder="No.tarjeta" formControlName="numTarjeta">
+                    <input type="number" class="form-control" placeholder="CVC" formControlName="cvc">
+                    <input type="date" class="form-control" placeholder="Vencimiento" formControlName="vencimiento">
+                </div>
+                <br>
+                <button  class="btn btn-success" [disabled]="formTarjeta.invalid">
+                    <img src="../../assets/credit-card.png" alt="" width="30px">
+                    Guardar metodo de pago
+                </button>
+            </form>
+            <br>
+            <div class="alert alert-success" role="alert" [hidden]="!banderaAciertoTarjeta">
+                Se guardo tu tarjeta con exito.
+            </div>
+            <div class="alert alert-danger" role="alert" [hidden]="!banderaErrorTarjeta">
+                Np guardo tu tarjeta.
+            </div>
+        </div>
+    </div>
+</div>
