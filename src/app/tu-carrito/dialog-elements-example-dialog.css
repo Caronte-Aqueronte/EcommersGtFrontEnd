@@ -1,0 +1,15 @@
+*{
+    padding: 10px;
+}
+
+.dialog-container-confirm{
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+}
+
+.dialog-container-error{
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+}

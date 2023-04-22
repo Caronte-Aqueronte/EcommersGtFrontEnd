@@ -1,7 +1,17 @@
 <div class="container">
+    <div class="options-container">
+        <button class="red" (click)="borrarTodoElCarrito()">
+            <img src="../../assets/delete.png" alt="" width="30px">
+            Borrar todo el carrito
+        </button>
+        <button class="green" [routerLink]="">
+            <img src="../../assets/credit-card.png" alt="" width="30px">
+            Comprar el carrito
+        </button>
+    </div>
     <h2>Tu carrito de compras:</h2>
-
     <div class="articulos-container">
-        <app-articulo-carrito-card *ngFor="let articulo of carrito" [articulo] = "articulo"  (notificar) = "mostrarDialog($event)"></app-articulo-carrito-card>
+        <app-articulo-carrito-card *ngFor="let articulo of carrito" [articulo]="articulo"
+            (notificar)="mostrarDialog($event)"></app-articulo-carrito-card>
     </div>
 </div>
