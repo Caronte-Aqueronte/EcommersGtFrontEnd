@@ -13,15 +13,22 @@ import { CrearArticuloComponent } from './crear-articulo/crear-articulo.componen
 import { ArticuloDeUsuarioCardComponent } from './articulo-de-usuario-card/articulo-de-usuario-card.component';
 import { TusArticulosComponent } from './tus-articulos/tus-articulos.component';
 import { EditarArticuloComponent } from './editar-articulo/editar-articulo.component';
-
+import { MuroComponent } from './muro/muro.component';
+import { ArticuloMuroCardComponent } from './articulo-muro-card/articulo-muro-card.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TuCarritoComponent } from './tu-carrito/tu-carrito.component';
+import { ArticuloCarritoCardComponent } from './articulo-carrito-card/articulo-carrito-card.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, CrearUsuarioComponent, MenuNormalComponent, CrearArticuloComponent, ArticuloDeUsuarioCardComponent, TusArticulosComponent, EditarArticuloComponent],
+  declarations: [AppComponent, LoginComponent, CrearUsuarioComponent, MenuNormalComponent, CrearArticuloComponent, ArticuloDeUsuarioCardComponent, TusArticulosComponent, EditarArticuloComponent, MuroComponent, ArticuloMuroCardComponent, TuCarritoComponent, ArticuloCarritoCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],

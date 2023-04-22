@@ -39,13 +39,11 @@ export class ArticuloService {
     form.append('descripcion', articulo.descripcion);
     form.append('precio', articulo.precio);
     form.append('categoria', articulo.categoria);
-
-    console.log(form);
     return this.http.post<any>(this.url + '/editarInfo', form);
   }
 
-  public mostrarArticulos() {
-    return this.http.get(this.url + '/mostrar-articulos');
+  public mostrarArticulos():Observable<any> {
+    return this.http.get<Observable<any>>(this.url + '/mostrar-articulos');
   }
 
 
@@ -55,5 +53,9 @@ export class ArticuloService {
 
   public buscarArticuloPorId(id: String): Observable<any>{
     return this.http.get<Observable<any>>(this.url + `/bucarArticuloPorId?id=${id}`);
+  }
+
+  public buscarArticuloPorCategoria(categoria: String): Observable<any>{
+    return this.http.get<Observable<any>>(this.url + `/bucarPorCategoria?categoria=${categoria}`);
   }
 }

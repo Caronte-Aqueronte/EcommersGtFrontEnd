@@ -1,0 +1,18 @@
+
+<div class="card-container">
+    <img src="{{articulo.articulo[0].imagen.archivoUrl}}" class="img-fluid img-thumbnail img">
+    <div class="info-container">
+
+        <p><span>Nombre:</span>  {{articulo.articulo[0].nombre}}</p>
+        <p><span>Descripción:</span>  {{articulo.articulo[0].descripcion}}</p>
+        <p><span>Precio:</span>  {{articulo.articulo[0].precio}}</p>
+        <p><span>Categoria:</span>  {{articulo.articulo[0].categoria}}</p>
+
+        <button (click)="borrarDeCarrito()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Eliminar del carrito de compras
+          </button>
+    </div>
+</div>

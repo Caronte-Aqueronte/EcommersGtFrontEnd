@@ -1,0 +1,7 @@
+<div class="container">
+    <h2>Tu carrito de compras:</h2>
+
+    <div class="articulos-container">
+        <app-articulo-carrito-card *ngFor="let articulo of carrito" [articulo] = "articulo"  (notificar) = "mostrarDialog($event)"></app-articulo-carrito-card>
+    </div>
+</div>

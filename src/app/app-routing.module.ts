@@ -7,6 +7,8 @@ import { MenuNormalComponent } from './menu-normal/menu-normal.component';
 import { CrearArticuloComponent } from './crear-articulo/crear-articulo.component';
 import { TusArticulosComponent } from './tus-articulos/tus-articulos.component';
 import { EditarArticuloComponent } from './editar-articulo/editar-articulo.component';
+import { MuroComponent } from './muro/muro.component';
+import { TuCarritoComponent } from './tu-carrito/tu-carrito.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -27,6 +29,14 @@ const routes: Routes = [
       {
         path: 'editar-articulo/:id',
         component: EditarArticuloComponent,
+      },
+      {
+        path: 'muro',
+        component: MuroComponent,
+      },
+      {
+        path: 'carrito',
+        component: TuCarritoComponent,
       },
     ],
   },

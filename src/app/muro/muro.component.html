@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="buscador-container">
+        <p>Filtrar por categorias</p>
+        <select placeholder="Categoria del articulo" (change)="cambioEnSelect($event)" id="categorias">
+            <option>Todo</option>
+            <option>Tecnología</option>
+            <option>Hogar</option>
+            <option>Académico</option>
+            <option>Literatura</option>
+            <option>Decoración</option>
+            <option>Otros</option>
+        </select>
+    </div>
+    <h2>Articulos a la venta</h2>
+    <div class="articulos-container">
+        <app-articulo-muro-card *ngFor="let articulo of articulos" [articulo]="articulo"></app-articulo-muro-card>
+    </div>
+</div>
