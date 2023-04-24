@@ -26,7 +26,7 @@
                         <option *ngFor="let tarjeta of tarjetas">Tarjeta no.{{tarjeta.numero}}</option>
                     </select>
                     <br>
-                    <button type="button" class="btn btn-success" [disabled]="formPagar.invalid">
+                    <button class="btn btn-success" [disabled]="formPagar.invalid">
                         <img src="../../assets/credit-card.png" alt="" width="30px">
                         Pagar el carrito
                     </button>

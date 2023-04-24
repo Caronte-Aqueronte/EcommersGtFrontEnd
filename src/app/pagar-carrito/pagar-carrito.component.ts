@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { CarritoService } from '../servicios/carrito.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TarjetaService } from '../servicios/tarjeta.service';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogRef,
+} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pagar-carrito',
@@ -25,7 +30,8 @@ export class PagarCarritoComponent {
   constructor(
     private carritoService: CarritoService,
     private formBuilder: FormBuilder,
-    private tarjetaService: TarjetaService
+    private tarjetaService: TarjetaService,
+    private dialog: MatDialog
   ) {
     this.articulos = [];
     this.tarjetas = [];
@@ -85,7 +91,22 @@ export class PagarCarritoComponent {
     this.banderaMostrarMenuTarjeta = !this.banderaMostrarMenuTarjeta;
   }
 
-  public pagarCarrito(): void {}
+  public pagarCarrito(): void {
+    //mandamos todos los articulos albackend para que los guarde en la bd
+    this.carritoService.pagarCarrito(this.articulos).subscribe((respuesta) => {
+      if (respuesta.respuesta) {
+        this.dialog.open(DialogCarrito, {
+          data: { acierto: true },
+        });
+        this.mostrarCarrito();
+      } else {
+        this.dialog.open(DialogCarrito, {
+          data: { acierto: false },
+        });
+        this.mostrarCarrito();
+      }
+    });
+  }
 
   public guardarTarjeta(): void {
     //seteamos las banderas de notificacion como false
@@ -107,4 +128,21 @@ export class PagarCarritoComponent {
   get metodoPago() {
     return this.formPagar.get('metodoPago');
   }
+}
+
+//Clases que son las encargadas de mostrar un dialog
+export interface DialogData {
+  acierto: boolean;
+}
+
+@Component({
+  selector: 'dialog-elements-example-dialog',
+  templateUrl: './dialog-elements-example-dialog.html',
+  styleUrls: ['dialog-elements-example-dialog.css'],
+})
+export class DialogCarrito {
+  constructor(
+    public dialogRef: MatDialogRef<DialogCarrito>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+  ) {}
 }

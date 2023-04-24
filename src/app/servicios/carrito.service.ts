@@ -52,7 +52,7 @@ export class CarritoService {
   public borraTodoElCarrito(): Observable<any> {
     //mandamos a traer al usuario
     const usuarioCookies = this.cookiesService.get('correoElectronicoEcommers');
-    const usuario  = new Object({usuario: usuarioCookies});
+    const usuario = new Object({ usuario: usuarioCookies });
     return this.http.post<Observable<any>>(
       this.url + '/borraTodoElCarrito',
       usuario
@@ -69,5 +69,13 @@ export class CarritoService {
     return this.http.get<Observable<any>>(
       this.url + `/mostrarCarritoDeUsuario?usuario=${usuario}`
     );
+  }
+
+  /**
+   * envia un post a a la api para pagar un arrito
+   * @returns
+   */
+  public pagarCarrito(carrito: any): Observable<any> {
+    return this.http.post<Observable<any>>(this.url + '/pagarCarrito', carrito);
   }
 }
