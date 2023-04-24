@@ -10,6 +10,7 @@ import { EditarArticuloComponent } from './editar-articulo/editar-articulo.compo
 import { MuroComponent } from './muro/muro.component';
 import { TuCarritoComponent } from './tu-carrito/tu-carrito.component';
 import { PagarCarritoComponent } from './pagar-carrito/pagar-carrito.component';
+import { SeguimientoDePedidosNormalComponent } from './seguimiento-de-pedidos-normal/seguimiento-de-pedidos-normal.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -42,6 +43,10 @@ const routes: Routes = [
       {
         path: 'pagar-carrito',
         component: PagarCarritoComponent,
+      },
+      {
+        path: 'seguimiento',
+        component: SeguimientoDePedidosNormalComponent,
       },
     ],
   },

@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Tus pedidos</h2>
+    <div class="articulos-container">
+        <div class="card-container" *ngFor="let pedido of pedidos">
+            <div class="info-container">    
+                <p><span>Id de pedido:</span>  {{pedido._id}}</p>
+                <p><span>Total del pedido:</span> Q{{pedido.totalVenta}}</p>
+                <p><span>Fecha de entrega:</span>  {{pedido.fechaEntrega}}</p>
+                <p><span>Estado del pedido:</span>  {{pedido.estadoEntrega}}</p>
+            </div>
+        </div>
+    </div>
+</div>
