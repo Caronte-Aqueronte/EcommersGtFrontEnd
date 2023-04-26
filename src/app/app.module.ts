@@ -21,8 +21,12 @@ import { TuCarritoComponent } from './tu-carrito/tu-carrito.component';
 import { ArticuloCarritoCardComponent } from './articulo-carrito-card/articulo-carrito-card.component';
 import { PagarCarritoComponent } from './pagar-carrito/pagar-carrito.component';
 import { SeguimientoDePedidosNormalComponent } from './seguimiento-de-pedidos-normal/seguimiento-de-pedidos-normal.component';
+import { MenuPaqueteriaComponent } from './menu-paqueteria/menu-paqueteria.component';
+import { SeguimientoDePedidosPaqueteriaComponent } from './seguimiento-de-pedidos-paqueteria/seguimiento-de-pedidos-paqueteria.component';
+import { PedidoPaqueteriaCardComponent } from './pedido-paqueteria-card/pedido-paqueteria-card.component';
+import { EditarPedidoComponent } from './editar-pedido/editar-pedido.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, CrearUsuarioComponent, MenuNormalComponent, CrearArticuloComponent, ArticuloDeUsuarioCardComponent, TusArticulosComponent, EditarArticuloComponent, MuroComponent, ArticuloMuroCardComponent, TuCarritoComponent, ArticuloCarritoCardComponent, PagarCarritoComponent, SeguimientoDePedidosNormalComponent],
+  declarations: [AppComponent, LoginComponent, CrearUsuarioComponent, MenuNormalComponent, CrearArticuloComponent, ArticuloDeUsuarioCardComponent, TusArticulosComponent, EditarArticuloComponent, MuroComponent, ArticuloMuroCardComponent, TuCarritoComponent, ArticuloCarritoCardComponent, PagarCarritoComponent, SeguimientoDePedidosNormalComponent, MenuPaqueteriaComponent, SeguimientoDePedidosPaqueteriaComponent, PedidoPaqueteriaCardComponent, EditarPedidoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

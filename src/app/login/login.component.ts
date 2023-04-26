@@ -63,7 +63,10 @@ export class LoginComponent implements OnInit {
         this.cookiesService.set('correoElectronicoEcommers', correoEntry);
         if (respuesta.usuarioEncontrado.rol === 'Comun') {
           //redireccionamos al usuario a su panel principal
-          this.router.navigate(['/menu']);
+          this.router.navigate(['/menu/muro']);
+        } else if (respuesta.usuarioEncontrado.rol === 'Paqueteria') {
+          //redireccionamos al usuario a su panel principal
+          this.router.navigate(['/menu-paqueteria/pedidos']);
         }
       } else {
         this.banderaError = true; //si el login fallo entonces activamos el error

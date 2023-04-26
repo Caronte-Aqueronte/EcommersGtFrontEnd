@@ -19,4 +19,33 @@ export class PedidoService {
       this.url + `/mostrarPedidos?usuario=${usuario}`
     ); //enviar get al servidor
   }
+
+  public mostrarPediddosPendientes(): Observable<any> {
+    return this.http.get<Observable<any>>(
+      this.url + `/mostrarPedidosPendientes`
+    ); //enviar get al servidor
+  }
+
+  /**
+   * Envia un post a /entregarPedido al backend para entregar el pedido enviado
+   * @param pedido
+   * @returns
+   */
+  public entregarPedido(pedido: any): Observable<any> {
+    return this.http.post<Observable<any>>(
+      this.url + '/entregarPedido',
+      pedido
+    );
+  }
+
+  /**
+   * Envia un get a /buscarPedidoPorId al backend para nuscar un pedido por id
+   * @param pedido
+   * @returns
+   */
+  public buscarPedidoPorId(id: any): Observable<any> {
+    return this.http.get<Observable<any>>(
+      this.url + `/buscarPedidoPorId?id=${id}`
+    );
+  }
 }

@@ -1,0 +1,29 @@
+<div class="container">
+    <!-- FORMULARIO PARA LA EDICION DE LA INFO -->
+    <form [formGroup]="formEditarInfo" (submit)="editarInfoDeUnPedido()">
+        <div class="form-section-container">
+            <h2>Edita la fecha de entrega de un pedido</h2>
+           
+            <div class="inputbox">
+                
+                <input type="date" required="required" formControlName="fechaEntrega">
+                <span>Fecha de entrega</span>
+                <i></i>
+            </div>
+            <!-- Boton de ingresar -->
+            <button [hidden]="formEditarInfo.invalid">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> Editar fecha
+            </button>
+        </div>
+        <br>
+        <div *ngIf="banderaErrorInfo" class="alert alert-danger" role="alert">
+            No se edito la fecha del pedido.
+        </div>
+        <div *ngIf="banderaAciertoInfo" class="alert alert-success" role="alert">
+           La fecha del pedido fue editada con exito.
+        </div>
+    </form>
+</div>

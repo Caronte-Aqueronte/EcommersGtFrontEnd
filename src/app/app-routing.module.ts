@@ -11,6 +11,9 @@ import { MuroComponent } from './muro/muro.component';
 import { TuCarritoComponent } from './tu-carrito/tu-carrito.component';
 import { PagarCarritoComponent } from './pagar-carrito/pagar-carrito.component';
 import { SeguimientoDePedidosNormalComponent } from './seguimiento-de-pedidos-normal/seguimiento-de-pedidos-normal.component';
+import { MenuPaqueteriaComponent } from './menu-paqueteria/menu-paqueteria.component';
+import { SeguimientoDePedidosPaqueteriaComponent } from './seguimiento-de-pedidos-paqueteria/seguimiento-de-pedidos-paqueteria.component';
+import { EditarPedidoComponent } from './editar-pedido/editar-pedido.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -47,6 +50,20 @@ const routes: Routes = [
       {
         path: 'seguimiento',
         component: SeguimientoDePedidosNormalComponent,
+      },
+    ],
+  },
+  {
+    path: 'menu-paqueteria',
+    component: MenuPaqueteriaComponent,
+    children: [
+      {
+        path: 'pedidos',
+        component: SeguimientoDePedidosPaqueteriaComponent,
+      },
+      {
+        path: 'editar-pedido/:id',
+        component: EditarPedidoComponent,
       },
     ],
   },

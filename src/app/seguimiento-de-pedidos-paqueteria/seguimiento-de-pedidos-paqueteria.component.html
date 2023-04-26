@@ -1,0 +1,6 @@
+<div class="container">
+    <h2>Pedidos pendientes</h2>
+    <div class="articulos-container">
+      <app-pedido-paqueteria-card *ngFor="let pedido of pedidosPendientes" [pedido]="pedido" (notificar)="verSiRefrescar($event)"></app-pedido-paqueteria-card>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="card-container">
+    <div class="info-container">    
+        <p><span>Id de pedido:</span>  {{pedido._id}}</p>
+        <p><span>Total del pedido:</span> Q{{pedido.totalVenta}}</p>
+        <p><span>Fecha de entrega:</span>  {{pedido.fechaEntrega}}</p>
+        <p><span>Estado del pedido:</span>  {{pedido.estadoEntrega}}</p>
+        <button class="red" (click)="entregarPedido()">
+            <span class="circle1"></span>
+            <span class="circle2"></span>
+            <span class="circle3"></span>
+            <span class="circle4"></span>
+            <span class="circle5"></span>
+            <span class="text">Entregar pedido</span>
+        </button>
+        <button (click)="aEdicion()">
+            <span class="circle1"></span>
+            <span class="circle2"></span>
+            <span class="circle3"></span>
+            <span class="circle4"></span>
+            <span class="circle5"></span>
+            <span class="text">Editar pedido</span>
+        </button>
+    </div>
+</div>
