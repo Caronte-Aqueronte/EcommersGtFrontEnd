@@ -1,0 +1,59 @@
+<div class="container">
+    <!-- Formulario reactivo -->
+    <form [formGroup]="formUsuario" (submit)="crearUsuario()">
+        <div class="form-section-container">
+            <h2>Crea un usuario</h2>
+            <div class="inputbox">
+                <input type="text" required="required" formControlName="correoElectronico">
+                <span>Correo electronico</span>
+                <i></i>
+            </div>
+            <ng-container *ngIf="
+              correoElectronico?.errors &&
+              (correoElectronico?.touched || correoElectronico?.dirty)
+            ">
+                <small *ngIf="correoElectronico?.errors?.['required']" class="alert alert-danger">El correo electrónico
+                    es
+                    requerido.
+                </small>
+                <small *ngIf="correoElectronico?.errors?.['email']" class="alert alert-danger">Correo electrónico
+                    invalido.
+                </small>
+            </ng-container>
+
+            <div class="inputbox">
+                <input type="text" required="required" formControlName="password">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <ng-container *ngIf="
+            password?.errors &&
+            (password?.touched || password?.dirty)
+          ">
+                <small *ngIf="password?.errors?.['required']" class="alert alert-danger">El contraseña
+                    es
+                    requerida.
+                </small>
+            </ng-container>
+
+            <select placeholder="Tipo de usuario" formControlName="rol">
+                <option>Administrador</option>
+                <option>Paqueteria</option>
+            </select>
+            <!-- Boton de ingresar -->
+            <button [hidden]="formUsuario.invalid">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> Crear usuario
+            </button>
+        </div>
+        <br>
+        <div *ngIf="banderaError" class="alert alert-danger" role="alert">
+            No se creo el usuario.
+        </div>
+        <div *ngIf="banderaAcierto" class="alert alert-success" role="alert">
+            El usuario fue creado con exito
+        </div>
+    </form>
+</div>

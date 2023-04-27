@@ -15,6 +15,10 @@ import { MenuPaqueteriaComponent } from './menu-paqueteria/menu-paqueteria.compo
 import { SeguimientoDePedidosPaqueteriaComponent } from './seguimiento-de-pedidos-paqueteria/seguimiento-de-pedidos-paqueteria.component';
 import { EditarPedidoComponent } from './editar-pedido/editar-pedido.component';
 import { MuroSolicitudesComponent } from './muro-solicitudes/muro-solicitudes.component';
+import { IngresoDeUsuariosComponent } from './ingreso-de-usuarios/ingreso-de-usuarios.component';
+import { MuroUsuariosComponent } from './muro-usuarios/muro-usuarios.component';
+import { MenuAdministracionComponent } from './menu-administracion/menu-administracion.component';
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -69,6 +73,24 @@ const routes: Routes = [
       {
         path: 'solicitudes',
         component: MuroSolicitudesComponent,
+      },
+    ],
+  },
+  {
+    path: 'menu-administracion',
+    component: MenuAdministracionComponent,
+    children: [
+      {
+        path: 'crear-usuario',
+        component: IngresoDeUsuariosComponent,
+      },
+      {
+        path: 'usuarios',
+        component: MuroUsuariosComponent,
+      },
+      {
+        path: 'editar-usuario/:id',
+        component: EditarUsuarioComponent,
       },
     ],
   },

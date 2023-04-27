@@ -67,6 +67,9 @@ export class LoginComponent implements OnInit {
         } else if (respuesta.usuarioEncontrado.rol === 'Paqueteria') {
           //redireccionamos al usuario a su panel principal
           this.router.navigate(['/menu-paqueteria/pedidos']);
+        } else if(respuesta.usuarioEncontrado.rol === 'Administrador'){
+          //redireccionamos al usuario a su panel principal
+          this.router.navigate(['/menu-administracion/usuarios']);
         }
       } else {
         this.banderaError = true; //si el login fallo entonces activamos el error

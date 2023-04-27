@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-top-part">
+    <div class="left-part">
+      <div class="user-name">
+        <p class="name">{{usuario.correoElectronico}}</p>
+        <p class="role"> {{usuario.rol}} </p>
+      </div>
+    </div>
+    <div class="right-part">
+      <div class="user-photo">
+        <img src="../../assets/usuario.png" class="photo">
+      </div>
+    </div>
+  </div>
+  <div class="card-bottom-part">
+    <button (click)="mandarAEditarUsuario()">
+      <span class="icon">
+        <img src="../../assets/delete.png" class="icon2">
+      </span>
+      Editar usuario
+      <div class="arrow-wrapper">
+        <div class="arrow"></div>
+      </div>
+    </button>
+  </div>
+</div>

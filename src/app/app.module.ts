@@ -27,8 +27,13 @@ import { PedidoPaqueteriaCardComponent } from './pedido-paqueteria-card/pedido-p
 import { EditarPedidoComponent } from './editar-pedido/editar-pedido.component';
 import { ArticuloSolicitudCardComponent } from './articulo-solicitud-card/articulo-solicitud-card.component';
 import { MuroSolicitudesComponent } from './muro-solicitudes/muro-solicitudes.component';
+import { MenuAdministracionComponent } from './menu-administracion/menu-administracion.component';
+import { IngresoDeUsuariosComponent } from './ingreso-de-usuarios/ingreso-de-usuarios.component';
+import { MuroUsuariosComponent } from './muro-usuarios/muro-usuarios.component';
+import { UsuarioCardComponent } from './usuario-card/usuario-card.component';
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, CrearUsuarioComponent, MenuNormalComponent, CrearArticuloComponent, ArticuloDeUsuarioCardComponent, TusArticulosComponent, EditarArticuloComponent, MuroComponent, ArticuloMuroCardComponent, TuCarritoComponent, ArticuloCarritoCardComponent, PagarCarritoComponent, SeguimientoDePedidosNormalComponent, MenuPaqueteriaComponent, SeguimientoDePedidosPaqueteriaComponent, PedidoPaqueteriaCardComponent, EditarPedidoComponent, ArticuloSolicitudCardComponent, MuroSolicitudesComponent],
+  declarations: [AppComponent, LoginComponent, CrearUsuarioComponent, MenuNormalComponent, CrearArticuloComponent, ArticuloDeUsuarioCardComponent, TusArticulosComponent, EditarArticuloComponent, MuroComponent, ArticuloMuroCardComponent, TuCarritoComponent, ArticuloCarritoCardComponent, PagarCarritoComponent, SeguimientoDePedidosNormalComponent, MenuPaqueteriaComponent, SeguimientoDePedidosPaqueteriaComponent, PedidoPaqueteriaCardComponent, EditarPedidoComponent, ArticuloSolicitudCardComponent, MuroSolicitudesComponent, MenuAdministracionComponent, IngresoDeUsuariosComponent, MuroUsuariosComponent, UsuarioCardComponent, EditarUsuarioComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
