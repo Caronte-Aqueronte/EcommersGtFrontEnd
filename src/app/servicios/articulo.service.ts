@@ -58,4 +58,13 @@ export class ArticuloService {
   public buscarArticuloPorCategoria(categoria: String): Observable<any>{
     return this.http.get<Observable<any>>(this.url + `/bucarPorCategoria?categoria=${categoria}`);
   }
+
+  public mostrarNoPublicados():Observable<any>{
+    return this.http.get<Observable<any>>(this.url + `/mostrarNoPublicados`);
+  }
+
+  public publicarArticulo(id: any):Observable<any>{
+    const objeto = new Object({id:id});
+    return this.http.post<Observable<any>>(this.url + `/publicarArticulo`, objeto);
+  }
 }

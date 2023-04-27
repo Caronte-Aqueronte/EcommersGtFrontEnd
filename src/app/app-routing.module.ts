@@ -14,6 +14,7 @@ import { SeguimientoDePedidosNormalComponent } from './seguimiento-de-pedidos-no
 import { MenuPaqueteriaComponent } from './menu-paqueteria/menu-paqueteria.component';
 import { SeguimientoDePedidosPaqueteriaComponent } from './seguimiento-de-pedidos-paqueteria/seguimiento-de-pedidos-paqueteria.component';
 import { EditarPedidoComponent } from './editar-pedido/editar-pedido.component';
+import { MuroSolicitudesComponent } from './muro-solicitudes/muro-solicitudes.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -64,6 +65,10 @@ const routes: Routes = [
       {
         path: 'editar-pedido/:id',
         component: EditarPedidoComponent,
+      },
+      {
+        path: 'solicitudes',
+        component: MuroSolicitudesComponent,
       },
     ],
   },

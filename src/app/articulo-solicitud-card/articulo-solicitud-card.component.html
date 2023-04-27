@@ -1,1 +1,20 @@
-<p>articulo-solicitud-card works!</p>
+<div class="card-container">
+    <img src="{{articulo.imagen.archivoUrl}}" class="img-fluid img-thumbnail img">
+    <div class="info-container">
+
+        <p><span>Nombre:</span> {{articulo.nombre}}</p>
+        <p><span>Descripción:</span> {{articulo.descripcion}}</p>
+        <p><span>Precio:</span> {{articulo.precio}}</p>
+        <p><span>Categoria:</span> {{articulo.categoria}}</p>
+
+        <button (click)="publicar()">
+            <span class="circle1"></span>
+            <span class="circle2"></span>
+            <span class="circle3"></span>
+            <span class="circle4"></span>
+            <span class="circle5"></span>
+            <span class="text">Autorizar articulo</span>
+        </button>
+
+    </div>
+</div>
