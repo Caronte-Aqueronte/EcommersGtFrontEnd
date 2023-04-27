@@ -1,11 +1,21 @@
 <div class="container">
+    <div class="card-container">
+        <div class="info-container">
+            <p><span>Id de pedido:</span> {{pedido._id}}</p>
+            <p><span>Total del pedido:</span> Q{{pedido.totalVenta}}</p>
+            <p><span>Fecha de entrega:</span> {{pedido.fechaEntrega}}</p>
+            <p><span>Estado del pedido:</span> {{ pedido.estadoEntrega}}</p>
+        </div>
+    </div>
+
     <!-- FORMULARIO PARA LA EDICION DE LA INFO -->
+
     <form [formGroup]="formEditarInfo" (submit)="editarInfoDeUnPedido()">
         <div class="form-section-container">
             <h2>Edita la fecha de entrega de un pedido</h2>
-           
+
             <div class="inputbox">
-                
+
                 <input type="date" required="required" formControlName="fechaEntrega">
                 <span>Fecha de entrega</span>
                 <i></i>
@@ -23,7 +33,7 @@
             No se edito la fecha del pedido.
         </div>
         <div *ngIf="banderaAciertoInfo" class="alert alert-success" role="alert">
-           La fecha del pedido fue editada con exito.
+            La fecha del pedido fue editada con exito.
         </div>
     </form>
 </div>

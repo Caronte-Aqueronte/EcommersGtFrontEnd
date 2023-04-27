@@ -25,8 +25,10 @@ import { MenuPaqueteriaComponent } from './menu-paqueteria/menu-paqueteria.compo
 import { SeguimientoDePedidosPaqueteriaComponent } from './seguimiento-de-pedidos-paqueteria/seguimiento-de-pedidos-paqueteria.component';
 import { PedidoPaqueteriaCardComponent } from './pedido-paqueteria-card/pedido-paqueteria-card.component';
 import { EditarPedidoComponent } from './editar-pedido/editar-pedido.component';
+import { ArticuloSolicitudCardComponent } from './articulo-solicitud-card/articulo-solicitud-card.component';
+import { MuroSolicitudesComponent } from './muro-solicitudes/muro-solicitudes.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, CrearUsuarioComponent, MenuNormalComponent, CrearArticuloComponent, ArticuloDeUsuarioCardComponent, TusArticulosComponent, EditarArticuloComponent, MuroComponent, ArticuloMuroCardComponent, TuCarritoComponent, ArticuloCarritoCardComponent, PagarCarritoComponent, SeguimientoDePedidosNormalComponent, MenuPaqueteriaComponent, SeguimientoDePedidosPaqueteriaComponent, PedidoPaqueteriaCardComponent, EditarPedidoComponent],
+  declarations: [AppComponent, LoginComponent, CrearUsuarioComponent, MenuNormalComponent, CrearArticuloComponent, ArticuloDeUsuarioCardComponent, TusArticulosComponent, EditarArticuloComponent, MuroComponent, ArticuloMuroCardComponent, TuCarritoComponent, ArticuloCarritoCardComponent, PagarCarritoComponent, SeguimientoDePedidosNormalComponent, MenuPaqueteriaComponent, SeguimientoDePedidosPaqueteriaComponent, PedidoPaqueteriaCardComponent, EditarPedidoComponent, ArticuloSolicitudCardComponent, MuroSolicitudesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

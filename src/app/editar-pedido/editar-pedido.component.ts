@@ -9,9 +9,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./editar-pedido.component.css'],
 })
 export class EditarPedidoComponent {
+  pedido: any;
   formEditarInfo: FormGroup; //form de edicion
   banderaErrorInfo: boolean = false;
   banderaAciertoInfo: boolean = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private pedidoService: PedidoService,
@@ -25,12 +27,22 @@ export class EditarPedidoComponent {
 
   public buscarPedidoPorId(): void {
     const id = this.rutaActiva.snapshot.params['id']; //obtenemos el id d los parametros que nos envian
-    this.pedidoService.buscarPedidoPorId(id).subscribe((respuesta) =>{
-      let fechaFormateada = new Date( respuesta.fechaEntrega).toISOString().slice(0,10);//creamos una nueva fecha formateada a partir de la fecha enviada
-      this.formEditarInfo.controls['fechaEntrega'].setValue(
-       fechaFormateada
-      );
+    this.pedidoService.buscarPedidoPorId(id).subscribe((respuesta) => {
+      this.pedido = respuesta; //seteamos el pedido
+      this.formEditarInfo.controls['fechaEntrega'].setValue(respuesta.fechaEntrega);
     });
   }
-  public editarInfoDeUnPedido(): void {}
+  public editarInfoDeUnPedido(): void {
+    const id = this.rutaActiva.snapshot.params['id']; //obtenemos el id d los parametros que nos envian
+    const nuevaFecha = this.formEditarInfo.controls['fechaEntrega'].value; //obtener la fecha del txt fecha
+
+    this.pedidoService.editarInfoDeUnPedido(id, nuevaFecha).subscribe((res) => {
+      if (res.respuesta) {
+        alert('Se cambio la fecha del pedido con exito.');
+        this.buscarPedidoPorId();
+      } else {
+        alert('No se cambio la fecha del pedido.');
+      }
+    });
+  }
 }

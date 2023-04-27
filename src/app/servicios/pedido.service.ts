@@ -48,4 +48,17 @@ export class PedidoService {
       this.url + `/buscarPedidoPorId?id=${id}`
     );
   }
+
+  /**
+   * Envia un post al backend para ,andar a editar la fecha de entrega de un pedido
+   * @param id 
+   * @param nuevaFecha 
+   * @returns 
+   */
+  public editarInfoDeUnPedido(id: any, nuevaFecha: any): Observable<any> {
+    const aEditar = new Object({id: id, nuevaFecha: nuevaFecha});
+    return this.http.post<Observable<any>>(
+      this.url + `/editarInfoDeUnPedido`, aEditar
+    );
+  }
 }
