@@ -19,6 +19,7 @@ import { IngresoDeUsuariosComponent } from './ingreso-de-usuarios/ingreso-de-usu
 import { MuroUsuariosComponent } from './muro-usuarios/muro-usuarios.component';
 import { MenuAdministracionComponent } from './menu-administracion/menu-administracion.component';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
+import { ReportesComponent } from './reportes/reportes.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -91,6 +92,10 @@ const routes: Routes = [
       {
         path: 'editar-usuario/:id',
         component: EditarUsuarioComponent,
+      },
+      {
+        path: 'reportes',
+        component: ReportesComponent,
       },
     ],
   },

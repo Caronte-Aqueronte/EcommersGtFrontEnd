@@ -32,8 +32,11 @@ import { IngresoDeUsuariosComponent } from './ingreso-de-usuarios/ingreso-de-usu
 import { MuroUsuariosComponent } from './muro-usuarios/muro-usuarios.component';
 import { UsuarioCardComponent } from './usuario-card/usuario-card.component';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { MatTableModule } from '@angular/material/table' 
+import { MatFormFieldModule} from '@angular/material/form-field' 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, CrearUsuarioComponent, MenuNormalComponent, CrearArticuloComponent, ArticuloDeUsuarioCardComponent, TusArticulosComponent, EditarArticuloComponent, MuroComponent, ArticuloMuroCardComponent, TuCarritoComponent, ArticuloCarritoCardComponent, PagarCarritoComponent, SeguimientoDePedidosNormalComponent, MenuPaqueteriaComponent, SeguimientoDePedidosPaqueteriaComponent, PedidoPaqueteriaCardComponent, EditarPedidoComponent, ArticuloSolicitudCardComponent, MuroSolicitudesComponent, MenuAdministracionComponent, IngresoDeUsuariosComponent, MuroUsuariosComponent, UsuarioCardComponent, EditarUsuarioComponent],
+  declarations: [AppComponent, LoginComponent, CrearUsuarioComponent, MenuNormalComponent, CrearArticuloComponent, ArticuloDeUsuarioCardComponent, TusArticulosComponent, EditarArticuloComponent, MuroComponent, ArticuloMuroCardComponent, TuCarritoComponent, ArticuloCarritoCardComponent, PagarCarritoComponent, SeguimientoDePedidosNormalComponent, MenuPaqueteriaComponent, SeguimientoDePedidosPaqueteriaComponent, PedidoPaqueteriaCardComponent, EditarPedidoComponent, ArticuloSolicitudCardComponent, MuroSolicitudesComponent, MenuAdministracionComponent, IngresoDeUsuariosComponent, MuroUsuariosComponent, UsuarioCardComponent, EditarUsuarioComponent, ReportesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -41,7 +44,9 @@ import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.componen
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatFormFieldModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
