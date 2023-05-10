@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LogoutService } from '../servicios/logout.service';
 
 @Component({
   selector: 'app-menu-paqueteria',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-paqueteria.component.css']
 })
 export class MenuPaqueteriaComponent {
+  constructor(private logOutService: LogoutService) {}
 
+  public logout(): void {
+    this.logOutService.logOut();
+  }
 }

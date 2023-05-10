@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LogoutService } from '../servicios/logout.service';
 
 @Component({
   selector: 'app-menu-administracion',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class MenuAdministracionComponent {
 
+  constructor(private logOutService:LogoutService){
+
+  }
+
+  public logout():void{
+    this.logOutService.logOut();
+  }
 }
