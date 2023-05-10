@@ -43,7 +43,6 @@ export class CrearArticuloComponent {
   }
 
   public crearArticulo(): void {
-    console.log(this.formSubir);
     //volver banderas de confirmacion a false
     this.banderaAcierto = false;
     this.banderaError = false;

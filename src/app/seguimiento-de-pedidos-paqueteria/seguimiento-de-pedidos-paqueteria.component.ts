@@ -17,7 +17,6 @@ export class SeguimientoDePedidosPaqueteriaComponent {
   private mostrarPediddosPendientes(): void {
     this.pedidoService.mostrarPediddosPendientes().subscribe((respuesta: any) => {
       this.pedidosPendientes = respuesta;
-      console.log(this.pedidosPendientes);
     });
   }
 
